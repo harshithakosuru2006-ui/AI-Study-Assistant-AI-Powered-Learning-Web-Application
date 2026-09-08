@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Study Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="container">
+
+            <h1>AI Study Assistant</h1>
+
+            <p>
+                Learn smarter with your personal AI study companion.
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <section class="card">
+
+            <h2>Ask Your Question</h2>
+
+            <p class="description">
+                Enter an academic question or topic and get a
+                simple explanation.
+            </p>
+
+
+            <textarea
+                id="question"
+                placeholder="Example: Explain machine learning in simple terms..."
+                rows="6"></textarea>
+
+
+            <div class="buttons">
+
+                <button id="askButton">
+                    Ask AI
+                </button>
+
+                <button id="clearButton" class="secondary">
+                    Clear
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <section
+            id="loading"
+            class="loading hidden">
+
+            <div class="spinner"></div>
+
+            <p>Generating your answer...</p>
+
+        </section>
+
+
+        <section
+            id="resultSection"
+            class="card hidden">
+
+            <h2>AI Response</h2>
+
+            <div
+                id="answer"
+                class="answer">
+            </div>
+
+        </section>
+
+
+        <section
+            id="errorSection"
+            class="error hidden">
+
+            <p id="errorMessage"></p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            AI Study Assistant | Built with Python, Flask &
+            Anthropic API
+        </p>
+
+    </footer>
+
+
+    <script
+        src="{{ url_for('static', filename='js/script.js') }}">
+    </script>
+
+</body>
+
+</html>
